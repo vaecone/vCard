@@ -177,10 +177,11 @@
                 var typeInfo = fieldName.split(';');
                 fieldName = typeInfo[0];
                 fieldTypeInfo = typeInfo.slice(1).map(function (type) {
-                    var info = type.split('=');
+                    let info = type.split('=');
+
                     return {
-                        name: info[0].toLowerCase(),
-                        value: info[1].replace(/"(.*)"/, '$1')
+                        name: info[0]?.toLowerCase(),
+                        value: info[1]?.replace(/"(.*)"/, '$1')
                     }
                 });
             }
